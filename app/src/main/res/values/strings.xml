@@ -38,4 +38,6 @@
     <string name="txt_profile">Profile</string>
     <string name="txt_dummy_address">Dikirim ke alamat</string>
     <string name="txt_dummy_username">Guna Dermawan</string>
+    <string name="text_dummy_addtress">Di Kirim ke Alamat</string>
+    <string name="txt_dummy_user">Febrian Alif Hermawan</string>
 </resources>
