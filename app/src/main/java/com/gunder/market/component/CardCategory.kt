@@ -26,12 +26,12 @@ fun CardCategory(
 	Card(
 		modifier = Modifier
 			.width(200.dp)
-			.padding(vertical =  8.dp, horizontal = 16.dp)
+			.padding(vertical = 8.dp, horizontal = 16.dp)
 			.heightIn(48.dp),
 		shape = RoundedCornerShape(8.dp)
 	) {
 		Image(
-			painter = painterResource(id = listBanner.imgBanner),
+			painter = painterResource(id = listBanner.imgCard),
 			contentDescription = null,
 //			modifier = Modifier.width(200.dp)
 		)
