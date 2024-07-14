@@ -12,6 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.gunder.market.component.MainCardCategory
+import com.gunder.market.component.MainCategoryBottom
+import com.gunder.market.component.MainCategoryTop
 import com.gunder.market.component.MainTopBar
 import com.gunder.market.component.MainTopMenu
 import com.gunder.market.model.ListTopMenu
@@ -36,6 +39,9 @@ fun MarketApp(modifier: Modifier = Modifier) {
 //        your code compose here
 //			MainTopBar()
 			MainTopMenu()
+			MainCategoryTop()
+			MainCardCategory()
+			MainCategoryBottom()
 //            MainCategoryTop()
 //            MainCategoryCard()
 //            MainCategoryBottom()
