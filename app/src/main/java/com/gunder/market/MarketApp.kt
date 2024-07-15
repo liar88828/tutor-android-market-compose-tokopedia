@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import com.gunder.market.component.BottomBar
 import com.gunder.market.component.MainBannerVertical
 import com.gunder.market.component.MainCardCategory
 import com.gunder.market.component.MainCategoryBottom
@@ -26,7 +27,7 @@ fun MarketApp(modifier: Modifier = Modifier) {
 			MainTopBar()
 		},
 		bottomBar = {
-//            BottomBar()
+			BottomBar()
 		})
 	{ paddingValues ->
 		Column(
@@ -35,7 +36,6 @@ fun MarketApp(modifier: Modifier = Modifier) {
 				.padding(paddingValues)
 		) {
 //        your code compose here
-//			MainTopBar()
 			MainTopMenu()
 			MainCategoryTop()
 			MainCardCategory()
@@ -43,11 +43,7 @@ fun MarketApp(modifier: Modifier = Modifier) {
 			MainImageCategory()
 //			MainImageCategoryGrid()
 			MainBannerVertical()
-//            MainCategoryTop()
-//            MainCategoryCard()
-//            MainCategoryBottom()
-//            MainImageCategory()
-//            MainVerticalBanner()
+
 		}
 	}
 
