@@ -21,6 +21,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -33,19 +37,34 @@ import com.gunder.market.ui.theme.MarketTheme
 
 @Composable
 fun MainTopBar(modifier: Modifier = Modifier) {
-	Column(modifier = Modifier.padding(16.dp)) {
+//	val (name, setName) = remember {
+//		mutableStateOf("")
+//	}
+	var name by remember {
+		mutableStateOf("")
+	}
+	Text(text = name)
+
+
+	Column(modifier = modifier.padding(16.dp)) {
 		Row(
-			modifier = Modifier.width(IntrinsicSize.Min),
+			modifier = modifier.width(IntrinsicSize.Min),
 			verticalAlignment = Alignment.CenterVertically,
 			horizontalArrangement = Arrangement.SpaceBetween
 //                .spacedBy(8.dp)
 		) {
 			OutlinedTextField(
-				modifier = Modifier
-                    .widthIn(min = 200.dp)
-                    .padding(8.dp),
-				value = "",
-				onValueChange = {},
+				modifier = modifier
+					.widthIn(min = 200.dp)
+					.padding(8.dp),
+//				value = name,
+//				onValueChange = { name ->
+//					setName(name)
+//				},
+				value = name,
+				onValueChange = { newName ->
+					name = newName
+				},
 				leadingIcon = {
 					Icon(
 						imageVector = Icons.Outlined.Search,
@@ -60,12 +79,12 @@ fun MainTopBar(modifier: Modifier = Modifier) {
 			Icon(
 				imageVector = Icons.Outlined.Email,
 				contentDescription = null,
-				modifier = Modifier.size(24.dp)
+				modifier = modifier.size(24.dp)
 			)
 			Icon(
 				imageVector = Icons.Outlined.ShoppingCart,
 				contentDescription = null,
-				modifier = Modifier.size(24.dp)
+				modifier = modifier.size(24.dp)
 			)
 			Icon(
 				imageVector = Icons.Outlined.Notifications,
@@ -75,26 +94,26 @@ fun MainTopBar(modifier: Modifier = Modifier) {
 			Icon(
 				imageVector = Icons.Outlined.Menu,
 				contentDescription = null,
-				modifier = Modifier.size(24.dp)
+				modifier = modifier.size(24.dp)
 			)
 		}
 		Row(
-			modifier = Modifier.padding(top = 8.dp),
+			modifier = modifier.padding(top = 8.dp),
 			horizontalArrangement = Arrangement.spacedBy(8.dp),
 			verticalAlignment = Alignment.CenterVertically
 		) {
 			Icon(
 				imageVector = Icons.Outlined.LocationOn,
 				contentDescription = null,
-				modifier = Modifier.size(18.dp)
+				modifier = modifier.size(18.dp)
 			)
 			Text(text = stringResource(R.string.text_dummy_addtress), fontSize = 12.sp)
 
-            Icon(
-                imageVector = Icons.Outlined.Person,
-                contentDescription = null,
-                modifier = Modifier.size(18.dp)
-            )
+			Icon(
+				imageVector = Icons.Outlined.Person,
+				contentDescription = null,
+				modifier = modifier.size(18.dp)
+			)
 
 			Text(
 				text = stringResource(R.string.txt_dummy_user), fontSize = 12.sp,
